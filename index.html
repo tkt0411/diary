@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dearly - 나의 기록</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- 상단 메뉴 -->
+    <header class="header">
+        <h1 class="logo">Dearly.</h1>
+
+        <nav class="menu">
+            <a href="#" class="active">홈</a>
+            <a href="1.html">내 일기</a>
+            <a href="#">공개 글</a>
+        </nav>
+
+        <button class="write-button"
+                onclick="location.href='#posts'">
+            + 글쓰기
+        </button>
+    </header>
+
+    <main class="container">
+        <!-- 소개 영역 -->
+        <section class="hero">
+            <p class="subtitle">YOUR NOTES, YOUR STORIES</p>
+            <h2>나의 생각이 기록이 되는 곳</h2>
+            <p>일상의 소소한 이야기부터 특별한 순간까지.</p>
+        </section>
+
+        <!-- 게시글 영역 -->
+        <section id="posts">
+            <div class="section-header">
+                <div>
+                    <h2>최신 공개 글</h2>
+                    <p>다른 사람들과 함께 나누는 이야기</p>
+                </div>
+                <span id="post-count"></span>
+            </div>
+
+            <!-- JavaScript가 게시글 카드를 생성하는 영역 -->
+            <div id="post-list" class="post-list"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Dearly. &copy; 2026</p>
+    </footer>
+</body>
+</html>

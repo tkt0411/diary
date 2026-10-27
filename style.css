@@ -1,0 +1,178 @@
+
+/* 기본 설정 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, "Malgun Gothic", sans-serif;
+    background-color: #faf9f6;
+    color: #252522;
+}
+
+/* 상단 메뉴 */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 7%;
+    background-color: white;
+    border-bottom: 1px solid #e9e7e0;
+}
+
+.logo {
+    color: #3978e8;
+    margin: 0;
+    font-size: 28px;
+}
+
+.menu {
+    display: flex;
+    gap: 28px;
+}
+
+.menu a {
+    color: #666;
+    text-decoration: none;
+}
+
+.menu a:hover,
+.menu a.active {
+    color: #3978e8;
+}
+
+/* 버튼 */
+.write-button {
+    background-color: #3978e8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 18px;
+    cursor: pointer;
+}
+
+.write-button:hover {
+    background-color: #245fc5;
+}
+
+/* 본문 */
+.container {
+    width: 86%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+/* 소개 영역 */
+.hero {
+    background-color: #edf4ff;
+    border-radius: 14px;
+    padding: 45px 35px;
+    margin-bottom: 40px;
+}
+
+.subtitle {
+    color: #3978e8;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.hero h2 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    line-height: 1.7;
+}
+
+/* 게시글 제목 영역 */
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    margin-bottom: 8px;
+}
+
+.section-header p {
+    color: #777;
+    font-size: 14px;
+    margin-top: 0;
+}
+
+/* 게시글 카드 */
+.post-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.post-card {
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 24px;
+    transition: transform 0.2s;
+}
+
+.post-card:hover {
+    transform: translateY(-4px);
+}
+
+.category {
+    color: #3978e8;
+    font-size: 12px;
+}
+
+.post-card h3 {
+    font-size: 19px;
+    margin: 18px 0 12px;
+}
+
+.post-content {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.post-date {
+    color: #999;
+    font-size: 12px;
+    margin-top: 24px;
+}
+
+/* 하단 */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #999;
+    font-size: 12px;
+}
+
+/* 모바일 화면 */
+@media (max-width: 700px) {
+    .header {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .menu {
+        gap: 14px;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .hero h2 {
+        font-size: 25px;
+    }
+
+    .post-list {
+        grid-template-columns: 1fr;
+    }
+}
