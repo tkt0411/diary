@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -6,24 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dearly - 나의 기록</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script type="module" src="js/pages/home.js"></script>
 </head>
 <body>
-    <!-- 상단 메뉴 -->
-    <header class="header">
-        <h1 class="logo">Dearly.</h1>
-
-        <nav class="menu">
-            <a href="#" class="active">홈</a>
-            <a href="1.html">내 일기</a>
-            <a href="#">공개 글</a>
-        </nav>
-
-        <button class="write-button"
-                onclick="location.href='#posts'">
-            + 글쓰기
-        </button>
-    </header>
+    <!-- 상단 메뉴 (js/common.js가 채워 넣음) -->
+    <header id="app-header" class="header"></header>
 
     <main class="container">
         <!-- 소개 영역 -->

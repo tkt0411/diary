@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 - Dearly</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="js/pages/login.js"></script>
+</head>
+<body>
+    <header id="app-header" class="header"></header>
+
+    <main class="container auth-container">
+        <div class="tabs">
+            <button type="button" class="tab active" data-tab="login">로그인</button>
+            <button type="button" class="tab" data-tab="signup">회원가입</button>
+        </div>
+
+        <form id="auth-form" class="card-form">
+            <div id="name-field" hidden>
+                <label for="name">닉네임</label>
+                <input id="name" name="name" type="text" maxlength="20" placeholder="다른 사람에게 보일 이름">
+            </div>
+
+            <label for="email">이메일</label>
+            <input id="email" name="email" type="email" required autocomplete="email">
+
+            <label for="password">비밀번호</label>
+            <input id="password" name="password" type="password" required minlength="6" autocomplete="current-password">
+
+            <p id="form-error" class="form-error" role="alert"></p>
+
+            <button id="submit-button" class="write-button full" type="submit">로그인</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>Dearly. &copy; 2026</p>
+    </footer>
+</body>
+</html>

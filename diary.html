@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 일기 - Dearly</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="js/pages/diary.js"></script>
+</head>
+<body>
+    <header id="app-header" class="header"></header>
+
+    <main class="container">
+        <section>
+            <div class="section-header">
+                <div>
+                    <h2>내 일기</h2>
+                    <p>공개 글과 나만 보는 글을 모두 모아 봤어요</p>
+                </div>
+                <span id="post-count"></span>
+            </div>
+
+            <!-- 검색 / 필터 -->
+            <div class="toolbar">
+                <input id="search" type="search" placeholder="제목이나 내용으로 검색">
+                <select id="category-filter">
+                    <option value="">전체 카테고리</option>
+                </select>
+                <select id="visibility-filter">
+                    <option value="">공개 + 비공개</option>
+                    <option value="public">공개만</option>
+                    <option value="private">비공개만</option>
+                </select>
+            </div>
+
+            <div id="post-list" class="post-list"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Dearly. &copy; 2026</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,44 @@
+rules_version = '2';
+
+// Dearly Firestore 보안 규칙
+// Firebase 콘솔 > Firestore Database > 규칙 탭에 그대로 붙여넣고 "게시"하세요.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /entries/{entryId} {
+
+      function signedIn() {
+        return request.auth != null;
+      }
+
+      function isOwner() {
+        return signedIn() && resource.data.authorId == request.auth.uid;
+      }
+
+      function validEntry(data) {
+        return data.title is string && data.title.size() > 0 && data.title.size() <= 100
+          && data.content is string && data.content.size() > 0 && data.content.size() <= 10000
+          && data.category in ['일상', '생각', '여행', '기타']
+          && data.mood is string
+          && data.isPublic is bool
+          && data.createdAt is string
+          && data.updatedAt is string;
+      }
+
+      // 공개 글은 누구나, 비공개 글은 작성자만 읽을 수 있어요.
+      allow read: if resource.data.isPublic == true || isOwner();
+
+      // 로그인한 사람이 자기 이름(uid)으로만 글을 만들 수 있어요.
+      allow create: if signedIn()
+        && request.resource.data.authorId == request.auth.uid
+        && validEntry(request.resource.data);
+
+      // 작성자만 수정 가능, 작성자/작성일은 바꿀 수 없어요.
+      allow update: if isOwner()
+        && request.resource.data.authorId == resource.data.authorId
+        && request.resource.data.createdAt == resource.data.createdAt
+        && validEntry(request.resource.data);
+
+      allow delete: if isOwner();
+    }
+  }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글쓰기 - Dearly</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="js/pages/write.js"></script>
+</head>
+<body>
+    <header id="app-header" class="header"></header>
+
+    <main class="container narrow">
+        <h2 id="page-title">새 일기 쓰기</h2>
+
+        <form id="entry-form" class="card-form" hidden>
+            <label for="title">제목</label>
+            <input id="title" name="title" type="text" maxlength="100" required placeholder="오늘을 한 줄로 표현한다면?">
+
+            <div class="form-row">
+                <div>
+                    <label for="category">카테고리</label>
+                    <select id="category" name="category"></select>
+                </div>
+                <div>
+                    <span class="label">오늘의 기분</span>
+                    <div id="mood-picker" class="mood-picker"></div>
+                </div>
+            </div>
+
+            <label for="content">내용</label>
+            <textarea id="content" name="content" rows="12" maxlength="10000" required placeholder="자유롭게 기록해 보세요."></textarea>
+
+            <label class="checkbox">
+                <input id="is-public" name="isPublic" type="checkbox">
+                공개 글로 올리기 (체크하지 않으면 나만 볼 수 있어요)
+            </label>
+
+            <p id="form-error" class="form-error" role="alert"></p>
+
+            <div class="form-actions">
+                <a id="cancel-link" class="secondary-button" href="diary.html">취소</a>
+                <button id="submit-button" class="write-button" type="submit">저장하기</button>
+            </div>
+        </form>
+
+        <div id="page-message"></div>
+    </main>
+
+    <footer>
+        <p>Dearly. &copy; 2026</p>
+    </footer>
+</body>
+</html>

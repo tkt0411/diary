@@ -1,0 +1,20 @@
+{
+  "name": "dearly-server",
+  "version": "1.0.0",
+  "description": "Dearly 다이어리 백엔드 (Express + SQLite)",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning index.js",
+    "dev": "node --disable-warning=ExperimentalWarning --watch index.js"
+  },
+  "engines": {
+    "node": ">=22.5"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2"
+  }
+}

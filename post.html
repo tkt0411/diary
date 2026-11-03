@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일기 - Dearly</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="js/pages/post.js"></script>
+</head>
+<body>
+    <header id="app-header" class="header"></header>
+
+    <main class="container narrow">
+        <article id="entry" class="entry-detail" hidden>
+            <div class="card-top">
+                <span id="entry-category" class="category"></span>
+                <span id="entry-visibility"></span>
+            </div>
+            <h2 id="entry-title"></h2>
+            <p id="entry-meta" class="post-date"></p>
+            <div id="entry-content" class="entry-content"></div>
+
+            <div id="owner-actions" class="form-actions" hidden>
+                <button id="delete-button" class="danger-button" type="button">삭제</button>
+                <a id="edit-link" class="write-button" href="#">수정</a>
+            </div>
+        </article>
+
+        <div id="page-message"></div>
+        <p><a class="back-link" href="diary.html">← 내 일기 목록</a></p>
+    </main>
+
+    <footer>
+        <p>Dearly. &copy; 2026</p>
+    </footer>
+</body>
+</html>
